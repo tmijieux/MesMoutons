@@ -1,0 +1,139 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "fb4a2e6306f0085877362a756221fe41",
+    "entities": [
+      {
+        "tableName": "Mouton",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `numero` INTEGER, `nom` TEXT, `description` TEXT, `sexe` INTEGER NOT NULL, `parentId` INTEGER, `type` INTEGER NOT NULL, `dateNaissance` TEXT, `dateMort` TEXT, `dateAchat` TEXT, `dateVente` TEXT, `prixAchat` REAL, `prixVente` REAL, `nomAcheteur` TEXT, `nomVendeur` TEXT, FOREIGN KEY(`parentId`) REFERENCES `Mouton`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "numero",
+            "columnName": "numero",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nom",
+            "columnName": "nom",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sexe",
+            "columnName": "sexe",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "parentId",
+            "columnName": "parentId",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateNaissance",
+            "columnName": "dateNaissance",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dateMort",
+            "columnName": "dateMort",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dateAchat",
+            "columnName": "dateAchat",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dateVente",
+            "columnName": "dateVente",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "prixAchat",
+            "columnName": "prixAchat",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "prixVente",
+            "columnName": "prixVente",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nomAcheteur",
+            "columnName": "nomAcheteur",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nomVendeur",
+            "columnName": "nomVendeur",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "uq_numero",
+            "unique": true,
+            "columnNames": [
+              "numero"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `uq_numero` ON `${TABLE_NAME}` (`numero`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Mouton",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "parentId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'fb4a2e6306f0085877362a756221fe41')"
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_present_sheep">
+
+    <fragment
+        android:id="@+id/nav_add_sheep"
+        android:name="fr.mijieux.mesmoutons.ui.addsheep.AddSheepFragment"
+        android:label="Ajouter un mouton"
+        tools:layout="@layout/add_sheep_fragment" />
+
+    <fragment
+        android:id="@+id/nav_sheep_details"
+        android:name="fr.mijieux.mesmoutons.ui.sheepdetails.SheepDetailsFragment"
+        android:label="Mon mouton"
+        tools:layout="@layout/sheep_details_fragment">
+        <argument
+            android:name="idMouton"
+            app:argType="long" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_dead_sheep"
+        android:name="fr.mijieux.mesmoutons.ui.deadsheep.DeadSheepFragment"
+        android:label="@string/menu_dead"
+        tools:layout="@layout/fragment_sheep_list">
+        <argument
+            android:name="showDrawer"
+            app:argType="boolean"
+            android:defaultValue="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_sold_sheep"
+        android:name="fr.mijieux.mesmoutons.ui.soldsheep.SoldSheepFragment"
+        android:label="@string/menu_sold"
+        tools:layout="@layout/fragment_sheep_list">
+        <argument
+            android:name="showDrawer"
+            app:argType="boolean"
+            android:defaultValue="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_present_sheep"
+        android:name="fr.mijieux.mesmoutons.ui.presentsheep.PresentSheepFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_sheep_list">
+        <action
+            android:id="@+id/action_show_details"
+            app:destination="@id/nav_sheep_details" />
+        <argument
+            android:name="showDrawer"
+            app:argType="boolean"
+            android:defaultValue="true" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_send"
+        android:name="fr.mijieux.mesmoutons.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send" />
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="fr.mijieux.mesmoutons.ui.share.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share" />
+</navigation>

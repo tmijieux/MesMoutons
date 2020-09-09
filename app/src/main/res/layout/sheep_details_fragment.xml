@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ctrl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:rowCount="10">
+
+        <fr.mijieux.mesmoutons.control.LabeledTextView
+            android:id="@+id/sheepNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ctrl:label="Numéro" />
+
+        <fr.mijieux.mesmoutons.control.LabeledTextView
+            android:id="@+id/birthDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ctrl:label="Date de naissance" />
+
+        <fr.mijieux.mesmoutons.control.LabeledTextView
+            android:id="@+id/mother"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ctrl:label="Mère" />
+
+        <fr.mijieux.mesmoutons.control.LabeledTextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ctrl:label="Type" />
+
+        <fr.mijieux.mesmoutons.control.LabeledTextView
+            android:id="@+id/sexe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ctrl:label="Sexe" />
+
+        <fr.mijieux.mesmoutons.control.LabeledTextView
+            android:id="@+id/vendorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ctrl:label="Vendeur" />
+
+        <fr.mijieux.mesmoutons.control.LabeledTextView
+            android:id="@+id/buyPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ctrl:label="Prix d'achat" />
+
+        <fr.mijieux.mesmoutons.control.LabeledTextView
+            android:id="@+id/buyDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ctrl:label="Date d'achat" />
+    </LinearLayout>
+</ScrollView>
